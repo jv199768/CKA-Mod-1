@@ -1,0 +1,15 @@
+$ kubectl create role --verb get,list --resource ingresses,networkpolicy webdrillrole
+
+role.rbac.authorization.k8s.io/webdrillrole created
+
+$ kubectl create rolebinding --user networker --role webdrillrole webdrillrolebinding
+
+rolebinding.rbac.authorization.k8s.io/webdrillrolebinding created
+
+$ kubectl auth can-i get ingress --as networker
+
+yes
+
+$ kubectl auth can-i get ingress --as networker -n kube-system
+
+no
