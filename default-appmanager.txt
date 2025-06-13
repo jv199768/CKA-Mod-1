@@ -1,0 +1,4 @@
+$ kubectl create role default-appmanager --resource pod,deploy,svc,ingresses --verb get, list, watch, create -o yaml
+$ kubectl create rolebinding default-appmanager-rb \
+  --serviceaccount default:default \
+  --role default-appmanager
