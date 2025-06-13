@@ -1,0 +1,3 @@
+$ kubectl create role --verb get,list --resource ingresses,networkpolicy webdrillrole
+
+role.rbac.authorization.k8s.io/webdrillrole created
