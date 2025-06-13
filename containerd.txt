@@ -1,0 +1,15 @@
+$ sudo apt update && sudo apt install -y containerd.io
+$ sudo systemctl status containerd
+
+● containerd.service - containerd container runtime
+     Loaded: loaded (/lib/systemd/system/containerd.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2023-01-09 16:28:02 UTC; 1h 29min ago
+       Docs: https://containerd.io
+   Main PID: 3905928 (containerd)
+      Tasks: 15
+     Memory: 1.3G
+     CGroup: /system.slice/containerd.service
+             └─3905928 /usr/bin/containerd
+
+$ sudo sed -i -e 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
+  $ sudo sed -i -e 's/pause:3.8/pause:3.10/' /etc/containerd/config.toml
