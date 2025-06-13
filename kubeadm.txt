@@ -1,0 +1,10 @@
+$ sudo apt update && sudo apt install -y kubelet kubeadm kubectl
+$ sudo kubeadm init --cri-socket=unix:///var/run/containerd/containerd.sock
+
+[init] Using Kubernetes version: v1.32.0
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+
+...
+
+Your Kubernetes control-plane has initialized successfully!
